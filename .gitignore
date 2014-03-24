@@ -1,0 +1,10 @@
+.bundle/
+spec/dummy/log/*.log
+pkg/
+*/cassettes
+*.swp
+*.yml
+Gemfile.lock
+.tm_properties
+.ruby-version
+*.gem
