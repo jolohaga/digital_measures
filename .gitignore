@@ -1,0 +1,6 @@
+.bundle/
+spec/dummy/log/*.log
+pkg/
+*/cassettes
+*.swp
+*.yml

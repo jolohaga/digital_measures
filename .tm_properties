@@ -1,0 +1,40 @@
+projectDirectory = "$CWD"
+
+# show the path to the current tab's file in the window title
+windowTitle    = "${TM_FILEPATH:?${TM_FILEPATH/${CWD}.//}:$TM_DISPLAYNAME} $windowTitleProject$windowTitleSCM"
+
+# Extra files to include
+myExtraIncludes = ""
+fileBrowserGlob  = "{*,$myExtraIncludes}"
+include = "{$include,$myExtraIncludes}"
+includeInFileChooser = "{$includeInFileChooser,.rvmrc,.ruby-version,.tm_properties,.gitignore,.envrc}"
+
+# Hide log, vendor and tmp directories from search popups.
+myExtraExcludes = "log,tmp,coverage,cov,results,features/results"
+excludeInFileChooser  = "{$excludeInFileChooser,$myExtraExcludes}" 
+excludeInFolderSearch = "{$excludeInFolderSearch,$myExtraExcludes}"
+excludeInBrowser      = "{$excludeInBrowser,$myExtraExcludes}"
+
+fontName       = "Consolas"
+tabSize        = 2
+softTabs       = true
+showInvisibles = true
+
+# File type specific configuration
+[ *.{icns,ico,jpg,jpeg,m4v,nib,pdf,png,psd,pyc,rtf,tif,tiff,xib} ]
+binary           = true
+
+[ .git/COMMIT_EDITMSG ]
+spellChecking    = true
+spellingLanguage = 'en'
+
+[ "{README,INSTALL,LICENSE,TODO}" ]
+fileType         = "text.plain"
+
+[ *.{txt,md,mdown,markdown} ]
+spellChecking  = true
+
+[ attr.untitled ]
+fileType       = "text.plain"
+tabSize        = 2
+softTabs       = true
