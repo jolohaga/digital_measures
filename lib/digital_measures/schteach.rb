@@ -1,9 +1,9 @@
 module DigitalMeasures
-  class Schteach < Data
-    include Virtus.model
-    xml_convention :upcase
+  class Schteach
+    include DigitalMeasures::MultiMappable
     
-    post_element({ in: "Record/SCHTEACH" })
+    xml_name "SCHTEACH"
+    xml_convention :upcase
     
     element name: :tyt_term, type: String
     element name: :tyy_term, type: String
@@ -21,6 +21,10 @@ module DigitalMeasures
     
     def path
       "/login/service/v4/SchemaData/INDIVIDUAL-ACTIVITIES-University"
+    end
+    
+    def method
+      :post
     end
   end
 end
