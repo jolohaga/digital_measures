@@ -34,10 +34,12 @@ describe DigitalMeasures::Schteach do
     
     let(:username) { 'ringleader' }
     let(:params) { {tyt_term: "Fall", tyy_term: "2014", title: "ANTHRO", coursepre: "", coursenum: "101", courseletter: "", code: "", section: "1", level: "", enroll: "", numinstructor: "", chours: "", delivery_mode: "Lecture", username: username} }
-    let(:resource) { DigitalMeasures::Schteach.new(params) }
+    let(:entity) { DigitalMeasures::Schteach.new(params) }
+    let(:record) { DigitalMeasures::Record.new(username: username, schteach: [entity]) }
+    let(:data) { DigitalMeasures::SchemaData.new(records: [record]) }
     
     it "produces valid XML", :vcr do
-      request = Typhoeus::Request.new("#{dm_server}#{resource.validate_path}", userpwd: dm_userpwd, method: resource.method, headers: dm_headers, body: resource.to_s)
+      request = Typhoeus::Request.new("#{dm_server}#{entity.path}", userpwd: dm_userpwd, method: entity.method, headers: dm_headers, body: data.to_s)
       response = request.run
       expect(response.body).to include("Success")
     end

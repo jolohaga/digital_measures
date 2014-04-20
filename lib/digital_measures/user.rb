@@ -2,7 +2,7 @@ module DigitalMeasures
   class User < Resource
     include Virtus.model
 
-    xml_accessor :username, :from => '@username'
+    xml_accessor :username, from: '@username'
     
     element name: :first_name, type: String
     element name: :middle_name, type: String
