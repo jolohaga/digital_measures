@@ -11,7 +11,7 @@ describe DigitalMeasures::UserSchema do
   }
   
   it "generates a valid user schema", :vcr do
-    resource = DigitalMeasures::UserSchema.new(user_schema_params)
+    resource = described_class.new(user_schema_params)
     request = Typhoeus::Request.new("#{dm_server}#{resource.path}", userpwd: dm_userpwd, method: resource.method, headers: dm_headers, body: resource.to_s)
     response = request.run
     

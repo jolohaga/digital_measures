@@ -2,7 +2,7 @@ module DigitalMeasures
   class UserRole
     include MultiMappable
     
-    xml_name "INDIVIDUAL-ACTIVITIES-University-Faculty"
+    xml_name "#{DigitalMeasures::SCHEMA_KEY}-Faculty"
     
     attribute :username, String
     

@@ -11,7 +11,7 @@ module DigitalMeasures
     end
     
     def path
-      "/login/service/v4/SchemaData/INDIVIDUAL-ACTIVITIES-University"
+      "/login/service/v4/SchemaData/#{DigitalMeasures::SCHEMA_KEY}"
     end
   end
 end
