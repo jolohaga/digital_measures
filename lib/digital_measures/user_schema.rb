@@ -4,7 +4,7 @@ module DigitalMeasures
     
     xml_convention :upcase
     
-    xml_name "INDIVIDUAL-ACTIVITIES-University"
+    xml_name DigitalMeasures::SCHEMA_KEY
     
     attribute :username, String
     attribute :user_schema_key, String

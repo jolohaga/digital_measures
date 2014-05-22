@@ -14,7 +14,7 @@ describe DigitalMeasures::UserRole do
   }
   
   it "produces valid XML", :vcr do
-    resource = DigitalMeasures::UserRole.new(username: username)
+    resource = described_class.new(username: username)
     request = Typhoeus::Request.new("#{dm_server}#{resource.path}", userpwd: dm_userpwd, method: resource.method, headers: dm_headers, body: resource.to_s)
     response = request.run
     

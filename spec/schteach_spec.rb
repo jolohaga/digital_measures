@@ -16,7 +16,7 @@ describe DigitalMeasures::Schteach do
   }
   
   describe "validity" do
-    let(:entity) { DigitalMeasures::Schteach.new(schema_data_params) }
+    let(:entity) { described_class.new(schema_data_params) }
     let(:record) { DigitalMeasures::Record.new(username: username, schteach: [entity]) }
     let(:data) { DigitalMeasures::SchemaData.new(records: [record]) }
     
@@ -29,8 +29,8 @@ describe DigitalMeasures::Schteach do
   
   describe "multiple data schema", :vcr do
     let(:schema_data_params_2) { {tyt_term: "Winter", tyy_term: "2015", title: "ANTHRO", coursepre: "", coursenum: "102", courseletter: "", code: "", section: "1", level: "", enroll: "", numinstructor: "", chours: "", delivery_mode: "Lecture"} }
-    let(:entity) { DigitalMeasures::Schteach.new(schema_data_params) }
-    let(:entity_2) { DigitalMeasures::Schteach.new(schema_data_params_2) }
+    let(:entity) { described_class.new(schema_data_params) }
+    let(:entity_2) { described_class.new(schema_data_params_2) }
     let(:record) { DigitalMeasures::Record.new(username: username, schteach: [entity, entity_2]) }
     let(:data) { DigitalMeasures::SchemaData.new(records: [record]) }
     
@@ -57,9 +57,9 @@ describe DigitalMeasures::Schteach do
     
     let(:schema_data_params_2) { {tyt_term: "Fall", tyy_term: "2014", title: "PHYSICS", coursepre: "", coursenum: "20", courseletter: "B", code: "", section: "1", level: "", enroll: "", numinstructor: "", chours: "", delivery_mode: "Lecture"} }
     
-    let(:entity) { DigitalMeasures::Schteach.new(schema_data_params) }
+    let(:entity) { described_class.new(schema_data_params) }
     let(:record) { DigitalMeasures::Record.new(username: username, schteach: [entity]) }
-    let(:entity_2) { DigitalMeasures::Schteach.new(schema_data_params_2) }
+    let(:entity_2) { described_class.new(schema_data_params_2) }
     let(:record_2) { DigitalMeasures::Record.new(username: username_2, schteach: [entity_2]) }
     let(:data) { DigitalMeasures::SchemaData.new(records: [record, record_2]) }
     
