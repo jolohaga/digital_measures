@@ -1,15 +1,13 @@
 module DigitalMeasures
-  class DeleteUser
+  class GetSchemaIndex
     include MultiMappable
     
-    attribute :username, String
-    
     def path
-      "#{PATH_ROOT}/User/USERNAME:#{username}"
+      "#{PATH_ROOT}/SchemaIndex/#{SCHEMA_KEY}"
     end
     
     def method
-      :delete
+      :get
     end
     
     def to_s

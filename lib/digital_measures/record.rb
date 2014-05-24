@@ -6,6 +6,6 @@ module DigitalMeasures
     xml_convention :camelcase
     xml_accessor :username, from: "@username"
     
-    element name: :schteach, type: Array[DigitalMeasures::Schteach], opts: { as: [DigitalMeasures::Schteach] }
+    element name: :schteach, type: Array[Schteach], opts: { as: [Schteach] }
   end
 end

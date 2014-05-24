@@ -9,8 +9,10 @@ require "digital_measures/schteach"
 require "digital_measures/record"
 require "digital_measures/schema_data"
 require "digital_measures/get_schema_data"
-
-require "digital_measures/request"
+require "digital_measures/get_schema_index"
+require "digital_measures/index_entry"
+require "digital_measures/index"
+require "digital_measures/schema_index"
 
 module DigitalMeasures
 end
