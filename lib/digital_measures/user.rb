@@ -17,11 +17,11 @@ module DigitalMeasures
     end
     
     def path
-      "/login/service/v4/User"
+      "#{PATH_ROOT}/User"
     end
     
     def validate_path
-      "/login/service/v4/User:create-validate"
+      "#{PATH_ROOT}/User:create-validate"
     end
   end
 end

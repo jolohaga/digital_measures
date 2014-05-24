@@ -2,6 +2,8 @@ require 'digital_measures'
 require 'rspec/autorun'
 require 'vcr'
 require 'active_support/all'
+require 'ruby-debug'
+require 'deep-hash'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.

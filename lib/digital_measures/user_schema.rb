@@ -4,7 +4,7 @@ module DigitalMeasures
     
     xml_convention :upcase
     
-    xml_name DigitalMeasures::SCHEMA_KEY
+    xml_name SCHEMA_KEY
     
     attribute :username, String
     attribute :user_schema_key, String
@@ -18,11 +18,11 @@ module DigitalMeasures
     end
     
     def path
-      "/login/service/v4/UserSchema/USERNAME:#{username}"
+      "#{PATH_ROOT}/UserSchema/USERNAME:#{username}"
     end
     
     def validate_path
-      "/login/service/v4/UserSchema/USERNAME:update-validate/#{username}/#{user_schema_key}"
+      "#{PATH_ROOT}/UserSchema/USERNAME:update-validate/#{username}/#{user_schema_key}"
     end
   end
 end

@@ -4,14 +4,14 @@ module DigitalMeasures
     
     xml_name "Data"
     
-    element name: :records, type: Array[DigitalMeasures::Record], opts: { as: [DigitalMeasures::Record] }
+    element name: :records, type: Array[Record], opts: { as: [Record] }
     
     def method
       :post
     end
     
     def path
-      "/login/service/v4/SchemaData/#{DigitalMeasures::SCHEMA_KEY}"
+      "#{PATH_ROOT}/SchemaData/#{SCHEMA_KEY}"
     end
   end
 end

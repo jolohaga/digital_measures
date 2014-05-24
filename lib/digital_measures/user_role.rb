@@ -2,7 +2,7 @@ module DigitalMeasures
   class UserRole
     include MultiMappable
     
-    xml_name "#{DigitalMeasures::SCHEMA_KEY}-Faculty"
+    xml_name "#{SCHEMA_KEY}-Faculty"
     
     attribute :username, String
     
@@ -11,7 +11,7 @@ module DigitalMeasures
     end
     
     def path
-      "/login/service/v4/UserRole/USERNAME:#{username}"
+      "#{PATH_ROOT}/UserRole/USERNAME:#{username}"
     end
   end
 end
