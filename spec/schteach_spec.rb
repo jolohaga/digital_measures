@@ -4,7 +4,7 @@ describe DigitalMeasures::Schteach do
   let(:username) { "ringleader" }
   let(:user_params) { { first_name: "Bilbo", last_name: "Baggins", email: "bilbo@uci.edu", local_authentication: username, username: username } }
   let(:user_schema_params) { { ac_year: '2014-2015', college: 'Social Sciences', dep: 'Anthropology', username: username } }
-  let(:schema_data_params) { {tyt_term: "Fall", tyy_term: "2014", title: "ANTHRO", coursepre: "", coursenum: "101", courseletter: "", code: "", section: "1", level: "", enroll: "", numinstructor: "", chours: "", delivery_mode: "Lecture"} }
+  let(:schema_data_params) { {tyt_term: "Fall", tyy_term: "2014", title: "Introduction to Social-Cultural Anthropology", coursepre: "ANTHRO", coursenum: "2", courseletter: "A", code: "60000", section: "1", level: "Lower division", enroll: "417", numinstructor: "1", percent_resp: "100", chours: "4.0", delivery_mode: "Lecture"} }
 
   before(:each) {
     create_user(params: user_params)
@@ -28,7 +28,7 @@ describe DigitalMeasures::Schteach do
   end
   
   describe "multiple data schema", :vcr do
-    let(:schema_data_params_2) { {tyt_term: "Winter", tyy_term: "2015", title: "ANTHRO", coursepre: "", coursenum: "102", courseletter: "", code: "", section: "1", level: "", enroll: "", numinstructor: "", chours: "", delivery_mode: "Lecture"} }
+    let(:schema_data_params_2) { {tyt_term: "Winter", tyy_term: "2015", title: "Introduction to Archaeology", coursepre: "ANTHRO", coursenum: "2", courseletter: "C", code: "60060", section: "A", level: "Lower division", enroll: "132", numinstructor: "1", percent_resp: "100", chours: "4.0", delivery_mode: "Lecture"} }
     let(:entity) { described_class.new(schema_data_params) }
     let(:entity_2) { described_class.new(schema_data_params_2) }
     let(:record) { DigitalMeasures::Record.new(username: username, schteach: [entity, entity_2]) }
@@ -55,7 +55,7 @@ describe DigitalMeasures::Schteach do
       delete_user(username: username_2)
     }
     
-    let(:schema_data_params_2) { {tyt_term: "Fall", tyy_term: "2014", title: "PHYSICS", coursepre: "", coursenum: "20", courseletter: "B", code: "", section: "1", level: "", enroll: "", numinstructor: "", chours: "", delivery_mode: "Lecture"} }
+    let(:schema_data_params_2) { {tyt_term: "Fall", tyy_term: "2014", title: "Quantum Field Theory", coursepre: "PHYSICS", coursenum: "235", courseletter: "A", code: "48475", section: "A", level: "Graduate", enroll: "8", numinstructor: "1", percent_resp: "100", chours: "4.0", delivery_mode: "Lecture"} }
     
     let(:entity) { described_class.new(schema_data_params) }
     let(:record) { DigitalMeasures::Record.new(username: username, schteach: [entity]) }
