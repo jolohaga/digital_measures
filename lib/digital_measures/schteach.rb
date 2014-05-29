@@ -16,6 +16,7 @@ module DigitalMeasures
     element name: :level, type: String
     element name: :enroll, type: String
     element name: :numinstructor, type: String
+    element name: :percent_resp, type: String
     element name: :chours, type: String
     element name: :delivery_mode, type: String
   end
