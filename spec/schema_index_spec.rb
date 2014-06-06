@@ -13,9 +13,9 @@ describe DigitalMeasures::SchemaIndex, :vcr do
   it "has a useful structure" do
     schema_index = prepared_schema_index
     expect(schema_index.keys).to include(:indexes)
-    expect(schema_index[:indexes].all? {|i| i[:index_entries].present?}).to be_true
+    expect(schema_index[:indexes].all? {|i| i[:index_entries].present?}).to be true
     schema_index[:indexes].each do |i|
-      expect(i[:index_entries].all? {|e| e[:entry_key].present? && e[:href].present?}).to be_true
+      expect(i[:index_entries].all? {|e| e[:entry_key].present? && e[:href].present?}).to be true
     end
   end
   
