@@ -10,7 +10,3 @@ VCR.configure do |c|
   # Uncomment if you want to scrub some sensitive data from the cassettes
   #c.filter_sensitive_data('scrubbed') { "some sensitive data" }
 end
-
-RSpec.configure do |c|
-  c.treat_symbols_as_metadata_keys_with_true_values = true
-end
