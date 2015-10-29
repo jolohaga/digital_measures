@@ -1,7 +1,7 @@
 require 'digital_measures'
 require 'vcr'
 require 'active_support/all'
-require 'ruby-debug'
+require 'byebug'
 require 'deep-hash'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
